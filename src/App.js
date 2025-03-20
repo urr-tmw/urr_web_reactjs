@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import LayoutWithTailwind from './components/ressponsive';
-import HomePage from './sections/Banner';
+import Home from './pages/HomePage';
 
 function App() {
   return (
@@ -9,8 +8,8 @@ function App() {
       {/* <header className="App-header"> */}
       
 
-      <HomePage />
-  
+      <Home />
+      
       
       {/* </header> */}
     </div>
