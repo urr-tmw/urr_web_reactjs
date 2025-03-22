@@ -12,10 +12,10 @@ const Home = () => {
         <Banner />
 
         <AboutUs />
+        <div className="mb-120px"></div>
+        <Products/>
 
-        <Products />
-
-        <News />
+        <News/>
 
         <Events/>
 
