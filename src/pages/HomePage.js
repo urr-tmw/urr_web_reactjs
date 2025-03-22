@@ -5,9 +5,10 @@ import Products from '../sections/Products';
 import News from '../sections/News';
 import Events from '../sections/Events';
 import ContactUs from '../sections/ContactUs';
+import Footer from '../components/Footer';
 const Home = () => {
     return (
-      <div className="font-sans bg-gray-100">
+      <div className="font-sans">
 
         <Banner />
 
@@ -21,7 +22,13 @@ const Home = () => {
 
         <ContactUs/>
 
+        
+      <div style={{ marginTop: '-1300px' }}>
+        <Footer />
       </div>
+
+      </div>
+      
     );
   };
   
