@@ -24,22 +24,22 @@ const Footer = () => {
           {/* Explore Links */}
           <div className="text-left w-1/2">
             <h3 className="text-lg font-semibold mb-2">Explore Links</h3>
-            <ul className="space-y-1 text-sm">
-              <li><a href="/" className="hover:text-blue-400">Home</a></li>
-              <li><a href="/about" className="hover:text-blue-400">About us</a></li>
-              <li><a href="/products" className="hover:text-blue-400">Products</a></li>
-              <li><a href="/map" className="hover:text-blue-400">Contact us</a></li>
+            <ul className="space-y-2 px-0 text-sm">
+              <li><a href="/" className="">Home</a></li>
+              <li><a href="/about" className="">About us</a></li>
+              <li><a href="/products" className="">Products</a></li>
+              <li><a href="/map" className="">Contact us</a></li>
             </ul>
           </div>
 
           {/* Blog */}
           <div className="text-left w-1/2">
             <h3 className="text-lg font-semibold mb-2">Blog</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="/blog1" className="hover:text-blue-400">Blog1</a></li>
-              <li><a href="/blog2" className="hover:text-blue-400">Blog2</a></li>
-              <li><a href="/blog3" className="hover:text-blue-400">Blog3</a></li>
-              <li><a href="/blog4" className="hover:text-blue-400">Blog4</a></li>
+            <ul className="space-y-2 px-0 text-sm">
+              <li><a href="/blog1" className="">Blog1</a></li>
+              <li><a href="/blog2" className="">Blog2</a></li>
+              <li><a href="/blog3" className="">Blog3</a></li>
+              <li><a href="/blog4" className="">Blog4</a></li>
             </ul>
           </div>
         </div>

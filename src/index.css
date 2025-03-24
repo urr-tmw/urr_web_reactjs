@@ -36,5 +36,12 @@
 
 body {
   background-color: #F7F7F7; /* Use the custom color */
+
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
 }
+
 }
