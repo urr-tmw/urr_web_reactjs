@@ -30,7 +30,7 @@ const Navbar = () => {
           <div className="md:hidden fixed inset-0 z-[60] bg-black bg-opacity-50">
             {/* Side Menu Container */}
             <div
-              className="fixed top-[40px] left-[20px] right-[20px] w-[calc(100%-40px)] h-[367px] bg-white rounded-[24px] flex flex-col items-center z-[70]"
+              className="fixed border-4 border-red-600 top-[40px] left-[20px] right-[20px] w-[calc(100%-40px)] h-[367px] bg-white rounded-[24px] flex flex-col items-center z-[70]"
               style={{
                 maxWidth: "360px",
                 margin: "0 auto",
@@ -57,6 +57,10 @@ const Navbar = () => {
                 </svg>
               </button>
 
+
+
+
+
               {/* About Us Container */}
               <div
                 className="w-[148px] h-[53px] mt-[32px] ml-[34px] mr-[178px] flex items-center justify-center bg-white rounded-[10px]"
@@ -65,9 +69,10 @@ const Navbar = () => {
                   to="/about"
                   className="text-blue-600 hover:text-white hover:bg-blue-600 transition rounded-[10px] px-4 py-2"
                   style={{
+                    padding: '16px 8px'   ,
                     fontFamily: 'Inter',
                     fontWeight: 400,
-                    fontSize: '25.83px',
+                    fontSize: '22.83px',
                     lineHeight: '100%',
                     letterSpacing: '0%',
                     color: '#000000',
@@ -88,7 +93,7 @@ const Navbar = () => {
                   style={{
                     fontFamily: 'Inter',
                     fontWeight: 400,
-                    fontSize: '25.83px',
+                    fontSize: '22.83px',
                     lineHeight: '100%',
                     letterSpacing: '0%',
                     color: '#000000',
@@ -109,7 +114,7 @@ const Navbar = () => {
                   style={{
                     fontFamily: 'Inter',
                     fontWeight: 400,
-                    fontSize: '25.83px',
+                    fontSize: '22.83px',
                     lineHeight: '100%',
                     letterSpacing: '0%',
                     color: '#000000',
@@ -141,6 +146,10 @@ const Navbar = () => {
                 Enquire Now
               </button>
             </div>
+          
+          
+          
+          
           </div>
         )}
         <header className="sticky top-0 w-full max-w-[1422px] mx-auto h-[83px] mt-[34px] rounded-[41.26px] bg-white flex items-center justify-between shadow-lg px-4 md:px-8 mx-5 lg:px-16 z-50">
@@ -224,7 +233,7 @@ const Navbar = () => {
 
 
       {/* Modal for Enquire Form */}
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <div
           className="modal-overlay fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
           onClick={handleClickOutside}
@@ -233,7 +242,7 @@ const Navbar = () => {
             <Enquire />
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Content padding to prevent overlap */}
       <div className="pt-[40px]" />
