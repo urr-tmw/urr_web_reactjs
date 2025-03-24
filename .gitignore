@@ -24,3 +24,5 @@ yarn-error.log*
 
 
 deploy.sh
+package-lock.json
+package.json

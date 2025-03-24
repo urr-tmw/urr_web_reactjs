@@ -37,37 +37,105 @@ const titleOptions = ["Mr.", "Mrs.", "Ms.", "Dr.", "Prof.", "Other"];
 const ContactUs = () => {
   return (
     <section className="w-full max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 py-16">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-        
+      <div className="flex flex-col md:flex-row items-center justify-between gap-10 w-full max-w-[1458px] h-[695px] mx-auto px-4">
+
         {/* Left Container (Contact Form) */}
-        <div className="w-full md:w-1/2 bg-white shadow-lg p-6 rounded-2xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Get In Touch With Us</h2>
-          <form className="space-y-4">
-            <div className="flex items-center gap-2">
-              <select className="w-1/4 p-3 border rounded-md">
-                <option>Mr.</option>
-                <option>Ms.</option>
-                <option>Mrs.</option>
-              </select>
-              <input type="text" placeholder="Full Name*" className="w-3/4 p-3 border rounded-md" required />
-            </div>
-            <input type="email" placeholder="Email ID*" className="w-full p-3 border rounded-md" required />
-            <input type="tel" placeholder="Contact Number*" className="w-full p-3 border rounded-md" required />
-            <select className="w-full p-3 border rounded-md" required>
-              <option>Location*</option>
-              <option>New York</option>
-              <option>Los Angeles</option>
-              <option>Chicago</option>
-            </select>
-            <input type="text" placeholder="Subject" className="w-full p-3 border rounded-md" />
-            <textarea placeholder="Message" className="w-full p-3 border rounded-md h-24"></textarea>
-            <button className="w-full bg-black text-white p-3 rounded-md font-semibold">Submit</button>
-          </form>
-        </div>
+        <div className="w-full max-w-[695px] h-[695px] bg-white shadow-lg p-6 rounded-2xl flex items-center justify-center">
+  <div
+    className="w-[603.34px] h-[580.92px] bg-white shadow-md p-6 rounded-2xl"
+    style={{ margin: "57px 45.66px 0 46px" }}
+  >
+    <h2 className="text-2xl md:text-3xl font-bold text-left text-gray-800 mb-6">
+      Get In Touch With Us
+    </h2>
+    <form className="space-y-4">
+  {/* Row 1: Title + Full Name & Company Name */}
+  <div className="grid grid-cols-2 gap-4">
+  {/* Merged Title + Full Name Field with Vertical Line */}
+  <div className="relative w-full flex items-center border rounded-md">
+    {/* Dropdown */}
+    <select className="h-full bg-transparent pl-3 pr-2 text-gray-700 focus:outline-none">
+      <option>Mr.</option>
+      <option>Ms.</option>
+      <option>Mrs.</option>
+      <option>Dr</option>
+      <option>Prof</option>
+      <option>Others</option>
+    </select>
+
+    {/* Vertical Line */}
+    <div className="h-5 w-[1px] bg-gray-400 mx-2"></div>
+
+    {/* Full Name Input */}
+    <input
+      type="text"
+      placeholder="Full Name*"
+      className="w-full p-3 focus:outline-none"
+      required
+    />
+  </div>
+
+  {/* Company Name Field */}
+  <input
+    type="text"
+    placeholder="Company Name"
+    className="w-full p-3 border rounded-md"
+    required
+  />
+</div>
+
+  {/* Row 2: Email ID & Contact Number */}
+  <div className="grid grid-cols-2 gap-4">
+    <input
+      type="email"
+      placeholder="Email ID*"
+      className="w-full p-3 border rounded-md"
+      required
+    />
+    <input
+      type="tel"
+      placeholder="Contact Number*"
+      className="w-full p-3 border rounded-md"
+      required
+    />
+  </div>
+
+  {/* Row 3: Location & Residential/Commercial */}
+  <div className="grid grid-cols-2 gap-4">
+    <select className="w-full p-3 border rounded-md" required>
+      <option>Location*</option>
+      <option>New York</option>
+      <option>Los Angeles</option>
+      <option>Chicago</option>
+    </select>
+    <select className="w-full p-3 border rounded-md" required>
+      <option>Residential/Commercial*</option>
+      <option>Residential</option>
+      <option>Commercial</option>
+    </select>
+  </div>
+
+  {/* Row 4: Subject */}
+  <input type="text" placeholder="Subject" className="w-full p-3 border rounded-md" />
+
+  {/* Row 5: Message */}
+  <textarea placeholder="Message" className="w-full p-3 border rounded-md h-24"></textarea>
+
+  {/* Submit Button */}
+  <div className="flex justify-end">
+    <button className="bg-black text-white px-6 py-3 rounded-md font-semibold">
+      Submit
+    </button>
+  </div>
+</form>
+
+  </div>
+</div>
+
 
         {/* Right Container (Our Connections) */}
-        <div className="w-full md:w-1/2 bg-white shadow-lg p-6 rounded-2xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Our Connections</h2>
+        <div className="w-full max-w-[703px] h-[695px] bg-white shadow-lg p-6 rounded-2xl">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mt-38px mb-36px">Our Connections</h2>
           
           <div className="grid grid-cols-1  mb-6">
           <Swiper
