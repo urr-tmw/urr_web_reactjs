@@ -2,7 +2,7 @@ import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import img1 from "../assets/GTU1.png"; // Replace with actual image paths
 import img2 from "../assets/GTU2.png";
 import img3 from "../assets/GTU3.png";
@@ -33,149 +33,219 @@ const countries = [
   "Union of Soviet Socialist Republics*", "United Arab Emirates, The", "United Kingdom, The", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Württemberg*",
   "Yemen", "Zambia", "Zimbabwe"
 ];
-const titleOptions = ["Mr.", "Mrs.", "Ms.", "Dr.", "Prof.", "Other"];
+const titleOptions = ["Mr.", "Mrs.", "Ms.", "Dr.", "Prof.", "Others"];
 const ContactUs = () => {
   return (
-    <section className="w-full max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 py-16">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-10 w-full max-w-[1458px] h-[695px] mx-auto px-4">
-
-        {/* Left Container (Contact Form) */}
-        <div className="w-full max-w-[695px] h-[695px] bg-white shadow-lg p-6 rounded-2xl flex items-center justify-center">
-  <div
-    className="w-[603.34px] h-[580.92px] bg-white shadow-md p-6 rounded-2xl"
-    style={{ margin: "57px 45.66px 0 46px" }}
+    <div className="container">
+      <div className="row justify-content-center">
+        {/* Left Container */}
+        <div className="col-lg-6 d-flex align-items-stretch">
+          <div className="w-100 bg-white shadow-lg p-4 rounded-3" style={{ height: "695px", maxWidth: "695px" }}>
+          <h2 className="text-[35px] font-normal text-dark text-left mt-[57px] mb-4 font-dmSerif">
+  Get In Touch With Us
+</h2>
+            <form className="row g-3">
+        {/* Full Name & Company Name */}
+        <div className="col-md-6 d-flex border border-gray-600 rounded overflow-hidden">
+  <select
+    className="form-select border-0 border-end border-gray-600 text-center"
+    style={{
+      width: '90px',
+      minWidth: '90px',
+      padding: '0',
+      appearance: 'none',
+      textAlignLast: 'left',
+      outline: 'none', // Removes focus outline
+      boxShadow: 'none', // Prevents focus shadow in Bootstrap
+    }}
   >
-    <h2 className="text-2xl md:text-3xl font-bold text-left text-gray-800 mb-6">
-      Get In Touch With Us
-    </h2>
-    <form className="space-y-4">
-  {/* Row 1: Title + Full Name & Company Name */}
-  <div className="grid grid-cols-2 gap-4">
-  {/* Merged Title + Full Name Field with Vertical Line */}
-  <div className="relative w-full flex items-center border rounded-md">
-    {/* Dropdown */}
-    <select className="h-full bg-transparent pl-3 pr-2 text-gray-700 focus:outline-none">
-      <option>Mr.</option>
-      <option>Ms.</option>
-      <option>Mrs.</option>
-      <option>Dr</option>
-      <option>Prof</option>
-      <option>Others</option>
-    </select>
-
-    {/* Vertical Line */}
-    <div className="h-5 w-[1px] bg-gray-400 mx-2"></div>
-
-    {/* Full Name Input */}
-    <input
-      type="text"
-      placeholder="Full Name*"
-      className="w-full p-3 focus:outline-none"
-      required
-    />
-  </div>
-
-  {/* Company Name Field */}
+    {titleOptions.map((title) => (
+      <option key={title} value={title}>
+        {title}
+      </option>
+    ))}
+  </select>
   <input
     type="text"
-    placeholder="Company Name"
-    className="w-full p-3 border rounded-md"
+    className="form-control w-100 p-2 bg-transparent text-black placeholder-black border-0"
+    placeholder="Full Name*"
     required
+    style={{
+      outline: 'none', // Removes focus outline
+      boxShadow: 'none', // Prevents focus shadow in Bootstrap
+    }}
   />
 </div>
 
-  {/* Row 2: Email ID & Contact Number */}
-  <div className="grid grid-cols-2 gap-4">
-    <input
-      type="email"
-      placeholder="Email ID*"
-      className="w-full p-3 border rounded-md"
-      required
-    />
-    <input
-      type="tel"
-      placeholder="Contact Number*"
-      className="w-full p-3 border rounded-md"
-      required
-    />
-  </div>
 
-  {/* Row 3: Location & Residential/Commercial */}
-  <div className="grid grid-cols-2 gap-4">
-    <select className="w-full p-3 border rounded-md" required>
-      <option>Location*</option>
-      <option>New York</option>
-      <option>Los Angeles</option>
-      <option>Chicago</option>
-    </select>
-    <select className="w-full p-3 border rounded-md" required>
-      <option>Residential/Commercial*</option>
-      <option>Residential</option>
-      <option>Commercial</option>
-    </select>
-  </div>
 
-  {/* Row 4: Subject */}
-  <input type="text" placeholder="Subject" className="w-full p-3 border rounded-md" />
+<div className="col-md-6">
+  <input
+    type="text"
+    className="form-control"
+    placeholder="Company Name"
+    required
+    style={{
+      outline: 'none', // Removes default focus outline
+      boxShadow: 'none', // Removes blue glow effect
+      borderColor: '#ced4da', // Keeps Bootstrap default border color
+    }}
+  />
+</div>
 
-  {/* Row 5: Message */}
-  <textarea placeholder="Message" className="w-full p-3 border rounded-md h-24"></textarea>
 
-  {/* Submit Button */}
-  <div className="flex justify-end">
-    <button className="bg-black text-white px-6 py-3 rounded-md font-semibold">
-      Submit
-    </button>
-  </div>
-</form>
+        {/* Email ID & Contact Number */}
+<div className="col-md-6">
+  <input
+    type="email"
+    className="form-control"
+    placeholder="Email ID*"
+    required
+    style={{
+      outline: 'none', // Removes default focus outline
+      boxShadow: 'none', // Removes blue glow effect
+      borderColor: '#ced4da', // Keeps Bootstrap default border color
+    }}
+  />
+</div>
+<div className="col-md-6">
+  <input
+    type="tel"
+    className="form-control"
+    placeholder="Contact Number*"
+    required
+    style={{
+      outline: 'none', 
+      boxShadow: 'none', 
+      borderColor: '#ced4da',
+    }}
+  />
+</div>
 
+
+        {/* Location & Zip Code */}
+<div className="col-md-6">
+  <select
+    className="form-select border border-gray-600 rounded bg-transparent text-dark"
+    style={{
+      outline: 'none', // Removes default focus outline
+      boxShadow: 'none', // Removes blue glow effect
+      borderColor: '#ced4da', // Keeps Bootstrap default border color
+    }}
+  >
+    <option value="" disabled selected>
+      Country
+    </option>
+    {countries.map((country) => (
+      <option key={country} value={country}>
+        {country}
+      </option>
+    ))}
+  </select>
+</div>
+
+<div className="col-md-6">
+  <input
+    type="text"
+    className="form-control"
+    placeholder="Zip Code"
+    style={{
+      outline: 'none',
+      boxShadow: 'none',
+      borderColor: '#ced4da',
+    }}
+  />
+</div>
+
+        {/* Subject with Black Underline */}
+        {/* <div className="col-12"> */}
+        <div className="col-12">
+  <div className="form-group border border-dark rounded p-3">
+    {/* Subject as Heading with Black Underline */}
+    <h6 className="mb-2 pb-2 text-left border-bottom border-black">Subject</h6>
+
+    {/* Message Input */}
+    <textarea
+      className="form-control border-0"
+      placeholder="Message"
+      rows="8"
+      style={{
+        outline: 'none', // Removes focus outline
+        boxShadow: 'none', // Removes blue glow effect
+        borderColor: 'transparent', // Ensures no border color appears on focus
+      }}
+    ></textarea>
   </div>
 </div>
 
 
-        {/* Right Container (Our Connections) */}
-        <div className="w-full max-w-[703px] h-[695px] bg-white shadow-lg p-6 rounded-2xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mt-38px mb-36px">Our Connections</h2>
-          
-          <div className="grid grid-cols-1  mb-6">
-          <Swiper
+
+{/* </div> */}
+
+        {/* Submit Button */}
+        <div className="col-12 text-end">
+          <button className="btn btn-dark">Submit</button>
+        </div>
+      </form>
+          </div>
+        </div>
+
+        {/* Right Container */}
+        <div className="col-lg-6 d-flex align-items-stretch">
+          <div className="w-100 bg-white shadow-lg p-4 rounded-3 d-flex flex-column" style={{ height: "695px", maxWidth: "703px" }}>
+          <h2 className="text-[48px] font-normal text-dark text-center font-[DM Serif Display]">
+  Our Connections
+</h2>
+            
+            {/* Swiper Slider */}
+            <div className="my-4 flex justify-center">
+              <Swiper
                 modules={[Autoplay]}
                 spaceBetween={10}
                 slidesPerView={1}
                 autoplay={{ delay: 3000 }}
                 loop
-                className="w-full h-full"
+                className="w-100"
               >
                 {images.map((image, index) => (
-                  <SwiperSlide
-                    key={index}
-                    className="flex justify-center items-center"
-                  >
-                    <img
-                      src={image}
-                      alt={`Slide ${index + 1}`}
-                      className="w-full h-full object-contain rounded-lg"
-                    />
+                  <SwiperSlide key={index} className="d-flex justify-content-center align-items-center">
+                    <img src={image} alt={`Slide ${index + 1}`} className="img-fluid rounded" />
                   </SwiperSlide>
                 ))}
               </Swiper>
-          </div>
+            </div>
 
-          <div className="border-t pt-6">
-            <h3 className="text-xl font-semibold mb-2">Let’s change for a Smart World</h3>
-            <p className="text-gray-600 mb-4">
-              Discover the future of material innovation at URR Diamond Technologies.
-            </p>
-            <p className="flex items-center gap-2 text-gray-800">
-              📧 <span>Info@themailwhale.in</span>
-            </p>
-            <p className="flex items-center gap-2 text-gray-800">
-              📧 <span>Info@themailwhale.in</span>
-            </p>
+            {/* Divider */}
+            <hr className="mt-4 border-2 border-dark" />
+
+            {/* Contact Info */}
+            <div className="mt-3">
+            <h3 className="text-[35px] font-normal text-left font-[DM Serif Display]">
+  Let’s change for a Smart World
+</h3>
+<p className="text-[24px] font-light text-left font-[MADE Evolve Sans] text-muted">
+  Discover the future of material innovation at URR Diamond Technologies.
+</p>
+
+              <div className="d-flex flex-column flex-sm-row gap-3">
+                <div className="d-flex align-items-center gap-2">
+                  <FontAwesomeIcon icon={faEnvelope} className="text-dark fs-5" />
+                  <p className="mb-0 text-[24px] font-[MADE Evolve Sans] text-muted">Info@urr.com</p>
+                </div>
+                <div className="d-flex align-items-center gap-2">
+                  <FontAwesomeIcon icon={faWhatsapp} className="text-success fs-5" />
+                  <p className="mb-0 text-muted text-[20px] font-[MADE Evolve Sans]">
+                    WhatsApp: +91 98200 94971 <br /> Call: +1 (646) 699 3270
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        
       </div>
-    </section>
+    </div>
+
   );
 };
 

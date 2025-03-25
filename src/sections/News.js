@@ -19,12 +19,15 @@ const News = () => {
   return (
     <section className="container-fluid bg-light py-5">
       <div className="container">
-        <h1 className="text-center fw-bold mb-4" style={{ fontSize: "48px", lineHeight: "58.09px" }}>
-          News
-        </h1>
+      <h2
+  className="text-center fw-bold mb-4 font-montserrat font-semibold text-[48px]"
+  style={{ fontSize: "48px", lineHeight: "58.09px" }}
+>
+  News
+</h2>
 
         {/* Swiper for Mobile & Tablet */}
-        <div className="d-lg-none"> 
+        <div className="d-lg-none">
           <Swiper
             modules={[Pagination]}
             spaceBetween={20}
@@ -60,7 +63,10 @@ const News = () => {
 // Card Component with Small Card
 const NewsCard = ({ card }) => {
   return (
-    <div className="card shadow-lg rounded-lg overflow-hidden position-relative" style={{ width: "401px", height: "401px", borderRadius: "34.47px"}}>
+    <div
+      className="card shadow-lg rounded-lg overflow-hidden position-relative transition duration-300 hover:bg-[#080D19] hover:text-white"
+      style={{ width: "401px", height: "401px", borderRadius: "34.47px", transition: "0.3s" }}
+    >
       {/* Image */}
       <img src={card.img} alt={card.title} className="card-img-top" style={{ height: "230px", objectFit: "cover" }} />
 
@@ -70,28 +76,34 @@ const NewsCard = ({ card }) => {
       </div>
 
       {/* Small Card Inside */}
-<div
-  className="position-absolute bottom-0 start-50 translate-middle-x bg-white shadow p-3"
-  style={{ width: "374.82px", height: "201.53px", borderRadius: "17.7px" }}
->
-  {/* Date */}
-  <span className="text-muted small d-block text-start">1 Jan 2025</span>
+      <div
+        className="position-absolute bottom-0 start-50 translate-middle-x bg-white shadow p-3 transition duration-300 hover:bg-[#080D19] hover:text-white"
+        style={{
+          width: "374.82px",
+          height: "201.53px",
+          borderRadius: "17.7px",
+          transition: "0.3s",
+        }}
+      >
+        {/* Date */}
+        <span className="text-muted small d-block text-start hover:text-white">1 Jan 2025</span>
 
-  {/* Headline */}
-  <h6 className="fw-bold text-start mt-2">Top LGD News</h6>
+        {/* Headline */}
+        <h6 className="fw-bold text-start mt-2 hover:text-white">Top LGD News</h6>
 
-  {/* Description */}
-  <p className="small text-muted text-start mb-2">
-    The global LGD market is worth $15 billion, with India seeing 15-20% annual growth in consumption...
-  </p>
+        {/* Description */}
+        <p className="small text-muted text-start hover:text-white mb-2">
+          The global LGD market is worth $15 billion, with India seeing 15-20% annual growth in consumption...
+        </p>
 
-  {/* Button */}
-  <div className="d-flex justify-content-end">
-    <button className="btn btn-dark px-3">&gt;</button>
-  </div>
-</div>
+        {/* Button */}
+        <div className="d-flex justify-content-end">
+        <button className="btn btn-dark px-3 transition duration-300 hover:bg-white hover:text-black">
+  &gt;
+</button>
 
-
+        </div>
+      </div>
     </div>
   );
 };
