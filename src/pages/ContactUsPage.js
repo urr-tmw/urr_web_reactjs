@@ -1,11 +1,21 @@
-import React from 'react'
-
-const ContactUsPage = () => {
+import React from 'react';
+import ContactUs from '../sections/ContactUs';
+import Map from '../sections/Map';
+import Footer from '../components/Footer';
+function ContactUsPage() {
   return (
     <div>
-       
-    </div>
-   )
-}
+      <ContactUs/>
+      
+      <Map/>
+    {/* <ContactUs /> */}
 
-export default ContactUsPage
+
+
+    <div style={{ marginTop: '-1300px' }}>
+        <Footer />
+      </div>
+    </div>
+  );
+}
+export default ContactUsPage;
