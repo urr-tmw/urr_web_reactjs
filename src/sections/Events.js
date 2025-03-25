@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"; // Import arrow icons
 import { FiSearch } from "react-icons/fi"; // Importing the search icon from react-icons
 import Events_image from "../assets/Events.png";

@@ -66,7 +66,7 @@ const Navbar = () => {
                 className="w-[148px] h-[53px] mt-[32px] ml-[34px] mr-[178px] flex items-center justify-center bg-white rounded-[10px]"
               >
                 <Link
-                  to="/about"
+                  to="about"
                   className="text-blue-600 hover:text-white hover:bg-blue-600 transition rounded-[10px] px-4 py-2"
                   style={{
                     fontFamily: 'Inter',
@@ -87,7 +87,7 @@ const Navbar = () => {
                 className="w-[148px] h-[53px] mt-[28px] ml-[34px] mr-[178px] flex items-center justify-center bg-white rounded-[10px]"
               >
                 <Link
-                  to="/products"
+                  to="/productuspage"
                   className="text-blue-600 hover:text-white hover:bg-blue-600 transition rounded-[10px] px-4 py-2"
                   style={{
                     fontFamily: 'Inter',
@@ -108,7 +108,7 @@ const Navbar = () => {
                 className="w-[166px] h-[53px] mt-[28px] ml-[34px] mr-[160px] flex items-center justify-center bg-white rounded-[10px]"
               >
                 <Link
-                  to="/map"
+                  to="/contactuspage"
                   className="text-blue-600 hover:text-white hover:bg-blue-600 transition rounded-[10px] px-4 py-2"
                   style={{
                     fontFamily: 'Inter',
