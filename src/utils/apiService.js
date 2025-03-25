@@ -6,6 +6,7 @@ const BASE_URL="https://api.urrmanufacturing.com";
 export const getCategories = async () => {
   try {
     const response = await axios.get(`${BASE_URL}/api/categories/`);
+    console.log(response.status)
     return response.data;
   } catch (error) {
     console.error("Error fetching categories:", error);

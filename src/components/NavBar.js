@@ -30,7 +30,7 @@ const Navbar = () => {
           <div className="md:hidden fixed inset-0 z-[60] bg-black bg-opacity-50">
             {/* Side Menu Container */}
             <div
-              className="fixed border-4 border-red-600 top-[40px] left-[20px] right-[20px] w-[calc(100%-40px)] h-[367px] bg-white rounded-[24px] flex flex-col items-center z-[70]"
+              className="fixed top-[40px] left-[20px] right-[20px] w-[calc(100%-40px)] h-[367px] bg-white rounded-[24px] flex flex-col items-center z-[70]"
               style={{
                 maxWidth: "360px",
                 margin: "0 auto",
@@ -69,7 +69,6 @@ const Navbar = () => {
                   to="/about"
                   className="text-blue-600 hover:text-white hover:bg-blue-600 transition rounded-[10px] px-4 py-2"
                   style={{
-                    padding: '16px 8px'   ,
                     fontFamily: 'Inter',
                     fontWeight: 400,
                     fontSize: '22.83px',
@@ -169,8 +168,8 @@ const Navbar = () => {
             <ul className="flex space-x-6 text-gray-700 text-sm md:text-base lg:text-lg whitespace-nowrap relative">
               {[
                 { name: "About Us", path: "/about" },
-                { name: "Products", path: "/products" },
-                { name: "Contact Us", path: "/map" },
+                { name: "Products", path: "/productuspage" },
+                { name: "Contact Us", path: "/contactuspage" },
               ].map((item, index) => (
                 <li key={index} className="relative">
                   <Link
@@ -232,18 +231,15 @@ const Navbar = () => {
 
 
 
-      {/* Modal for Enquire Form */}
-      {/* {isModalOpen && (
+     {/* Modal for Enquire Form */}
+      {isModalOpen && (
         <div
-          className="modal-overlay fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+          className="modal-overlay fixed inset-0 z-[3000] flex items-center justify-center bg-black bg-opacity-50"
           onClick={handleClickOutside}
         >
-          <div className="modal-content bg-white rounded-[34.47px] p-6">
-            <Enquire />
-          </div>
+          <Enquire onClose={closeModal} />
         </div>
-      )} */}
-
+      )}
       {/* Content padding to prevent overlap */}
       <div className="pt-[40px]" />
     </>
