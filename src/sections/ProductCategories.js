@@ -19,6 +19,12 @@ const ProductCategories = () => {
             setSelectedCategory(category);
         }
     };
+
+
+    const handleCloseForm = () => {
+        setIsCustomized(false); // Close the Customized Form
+    };
+
     // Ensure scrolling only happens AFTER the component renders
     useEffect(() => {
         if (selectedCategory || isCustomized) {
@@ -104,11 +110,15 @@ const ProductCategories = () => {
 
 
     </section>
-
+            
 
             {/* Add an ID to the container for scrolling */}
             <div id="selected-product">
-                {isCustomized ? <CustomizedProductForm /> : <SelectedProduct selectedCategory={selectedCategory} />}
+                {isCustomized ? (
+                    <CustomizedProductForm onClose={handleCloseForm} />
+                ) : (
+                    selectedCategory && <SelectedProduct selectedCategory={selectedCategory} />
+                )}
             </div>
 
     </>

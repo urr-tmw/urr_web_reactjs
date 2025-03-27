@@ -4,6 +4,9 @@ export default {
   important: true,
   theme: {
     extend: {
+      fontFamily: {
+        'made-evolve-sans': ['MADE Evolve Sans', 'sans-serif'],
+      },
       colors: {
         customBg: "#F7F7F7", // Add custom background color
       },
