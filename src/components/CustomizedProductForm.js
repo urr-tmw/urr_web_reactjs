@@ -45,13 +45,15 @@ const CustomizedProductForm = ({ onClose }) => {
     };
 
     return (
-        <section className="border-4 border-green-600 min-h-[649px] text-black my-2 mx-auto px-4 sm:px-6 md:px-8 lg:px-10 overflow-hidden pb-6 w-[95%] max-w-[1200px]">
-            <h2 className="font-['DM_Serif_Display'] font-normal text-[35px] leading-[100%] tracking-[0%] mt-[40px] align-middle mb-3 text-left">Need Customized Products?</h2>
+        <section className="border-4 border-green-600 min-h-[649px] text-black my-2 mx-4 px-4 sm:px-6 md:px-8 lg:px-10 overflow-hidden flex items-center justify-center">
+            {/* <h2 className="font-['DM_Serif_Display'] font-normal text-[35px] leading-[100%] tracking-[0%] mt-[40px] align-middle mb-3 text-left">Need Customized Products?</h2> */}
 
-            <form onSubmit={handleSubmit} className="h-full">
-                <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 w-full">
+            <form onSubmit={handleSubmit} className="border-4 border-blue-900 p-6 w-full  ">
+                
+                
+                <div className=" border-4 border-blue-900 flex flex-col lg:flex-row gap-4 lg:gap-2 w-full ">
                     {/* Left Container */}
-                    <div className="w-full border-4 border-red-400  lg:w-[48%]">
+                    <div className="w-full lg:w-[50%] border-4 border-red-400 ">
                         {/* Tablet-specific vertical layout (768px-1024px) */}
                         <div className="md:flex md:flex-col md:space-y-3">
                             <div className="flex flex-col sm:flex-row gap-3 sm:gap-[20px] mb-[5px] md:mb-0 md:flex-col md:gap-3 lg:flex-row lg:gap-[26.1px] lg:mb-[10px]">
@@ -187,7 +189,7 @@ const CustomizedProductForm = ({ onClose }) => {
                     </div>
 
                     {/* Right Container */}
-                    <div className="w-full lg:w-[48%] border-4 border-red-400 space-y-3">
+                    <div className="w-full lg:w-[50%] border-4 border-red-400 ">
                         {/* Custom Dropdown for Diamond Type */}
                         <div className="relative mb-3">
                             <button
@@ -399,14 +401,18 @@ const CustomizedProductForm = ({ onClose }) => {
                             </div>
                         </div>
                          
-                        <div className="flex justify-end mr-[5px] mt-[3px]">
-                            <button
-                                type="submit"
-                                className="w-[161px] h-[49px] bg-black text-white rounded-[13.43px] hover:bg-gray-800 text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-lg">
-                                Submit
-                            </button>
-                        </div>
+
                     </div>
+
+
+                   
+                </div>
+                <div className="flex justify-center mr-[5px] mt-[3px]">
+                    <button
+                        type="submit"
+                        className="w-[161px] h-[49px]  bg-black text-white rounded-[13.43px] hover:bg-gray-800 text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-lg">
+                        Submit
+                    </button>
                 </div>
             </form>
         </section>
