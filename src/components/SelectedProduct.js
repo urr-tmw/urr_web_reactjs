@@ -36,11 +36,11 @@ const SelectedProduct = ({ selectedCategory, selectedIndex }) => {
                 <div className="flex justify-center items-center w-full">
                     {/* Main card container - centered properly */}
                     <div 
-                        className={`flex flex-col sm:flex-row justify-between items-center rounded-[50px] w-full max-w-[1249.81px] min-h-[311.25px] mx-[39px] my-[28px] ${cardStyles.bgColor}`}
+                        className={`border-4 border-red-600 flex flex-col sm:flex-row justify-between items-center rounded-[50px] w-full max-w-[1249.81px] min-h-[311.25px]  ${cardStyles.bgColor}`}
                     >
                         {/* Text container with automatic height adjustment */}
                         <div 
-                            className={`w-full sm:w-[680px] min-h-[226px] flex flex-col justify-center p-4 ${
+                            className={` w-full sm:w-[680px] min-h-[226px] flex flex-col justify-center p-4 ${
                                 cardStyles.layout === 'reverse' ? 'sm:order-2' : 'sm:order-1'
                             }`}
                         >
