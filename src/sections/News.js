@@ -19,12 +19,12 @@ const News = () => {
   return (
     <section className="container-fluid bg-light py-5">
       <div className="container">
-      <h2
-  className="text-center fw-bold mb-4 font-montserrat font-semibold text-[48px]"
-  style={{ fontSize: "48px", lineHeight: "58.09px" }}
->
-  News
-</h2>
+        <h2
+          className="text-center fw-bold mb-4 font-montserrat font-semibold"
+          style={{ fontSize: "48px", lineHeight: "58.09px" }}
+        >
+          News
+        </h2>
 
         {/* Swiper for Mobile & Tablet */}
         <div className="d-lg-none">
@@ -40,17 +40,15 @@ const News = () => {
             className="pb-4"
           >
             {cards.map((card, index) => (
-              <SwiperSlide key={index}>
-                <div className="d-flex justify-content-center">
-                  <NewsCard card={card} />
-                </div>
+              <SwiperSlide key={index} className="d-flex justify-content-center">
+                <NewsCard card={card} />
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
 
         {/* Grid for Desktop View */}
-        <div className="d-none d-lg-flex justify-content-center gap-4">
+        <div className="d-none d-lg-flex justify-content-center gap-4 flex-wrap">
           {cards.map((card, index) => (
             <NewsCard key={index} card={card} />
           ))}
@@ -64,11 +62,22 @@ const News = () => {
 const NewsCard = ({ card }) => {
   return (
     <div
-      className="card shadow-lg rounded-lg overflow-hidden position-relative transition duration-300 hover:bg-[#080D19] hover:text-white"
-      style={{ width: "401px", height: "401px", borderRadius: "34.47px", transition: "0.3s" }}
+      className="card shadow-lg rounded-lg overflow-hidden position-relative transition duration-300"
+      style={{
+        width: "100%",
+        maxWidth: "401px",
+        height: "401px",
+        borderRadius: "34.47px",
+        transition: "0.3s",
+      }}
     >
       {/* Image */}
-      <img src={card.img} alt={card.title} className="card-img-top" style={{ height: "230px", objectFit: "cover" }} />
+      <img
+        src={card.img}
+        alt={card.title}
+        className="card-img-top"
+        style={{ height: "230px", objectFit: "cover" }}
+      />
 
       {/* Main Card Body */}
       <div className="card-body text-center">
@@ -77,33 +86,61 @@ const NewsCard = ({ card }) => {
 
       {/* Small Card Inside */}
       <div
-        className="position-absolute bottom-0 start-50 translate-middle-x bg-white shadow p-3 transition duration-300 hover:bg-[#080D19] hover:text-white"
+        className="position-absolute bottom-0 start-50 translate-middle-x bg-white shadow p-3 transition duration-300"
         style={{
-          width: "374.82px",
+          width: "90%",
+          maxWidth: "374.82px",
           height: "201.53px",
           borderRadius: "17.7px",
           transition: "0.3s",
         }}
       >
         {/* Date */}
-        <span className="text-muted small d-block text-start hover:text-white">1 Jan 2025</span>
+        <span className="text-muted small d-block text-start">1 Jan 2025</span>
 
         {/* Headline */}
-        <h6 className="fw-bold text-start mt-2 hover:text-white">Top LGD News</h6>
+        <h6 className="fw-bold text-start mt-2">Top LGD News</h6>
 
         {/* Description */}
-        <p className="small text-muted text-start hover:text-white mb-2">
+        <p className="small text-muted text-start mb-2">
           The global LGD market is worth $15 billion, with India seeing 15-20% annual growth in consumption...
         </p>
 
         {/* Button */}
         <div className="d-flex justify-content-end">
-        <button className="btn btn-dark px-3 transition duration-300 hover:bg-white hover:text-black">
-  &gt;
-</button>
-
+          <button className="btn btn-dark px-3 transition duration-300">
+            &gt;
+          </button>
         </div>
       </div>
+
+      {/* Hover Effects */}
+      <style>
+        {`
+          .card:hover {
+            background-color: #080D19 !important;
+            color: white !important;
+          }
+          
+          .card:hover .card-title {
+            color: white !important;
+          }
+
+          .card:hover .position-absolute {
+            background-color: #080D19 !important;
+            color: white !important;
+          }
+
+          .card:hover .position-absolute .text-muted {
+            color: white !important;
+          }
+
+          .card:hover .btn-dark {
+            background-color: white !important;
+            color: black !important;
+          }
+        `}
+      </style>
     </div>
   );
 };
