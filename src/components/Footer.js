@@ -7,7 +7,7 @@ const Footer = () => {
       {/* Top Container with #F7F7F7 color */}
       <div className="bg-[#F7F7F7] h-[50px] rounded-b-[100px] border-0 w-full absolute top-0 left-0"></div>
 
-      {/* Footer Content */}
+      Footer Content
       <div className=" mt-[0px] container mx-auto px-2 pt-[100px] pb-0 flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0">
         {/* Section 1: Logo */}
         <div className="w-[320px] h-[186px] flex flex-col items-center md:items-start">
