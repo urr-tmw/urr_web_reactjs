@@ -41,19 +41,20 @@ const titleOptions = ["Mr.", "Mrs.", "Ms.", "Dr.", "Prof.", "Others"];
 
 
 const ContactUs = () => {
-  const [fullName, setFullName] = useState("");
+
   const [inputs, setInputs] = useState({});
 
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setInputs(values => ({ [name]: value}))
+    setInputs(values => ({ ...values, [name]: value }));
+
   }
 
   const handleSubmit = (e) => {
     console.log(e)
     e.preventDefault();
-    alert(inputs);
+    alert(JSON.stringify(inputs, null, 2));
     // console.log(fullName,companyName,emailId)
     // alert(`Your customized product request has been submitted successfully ${title} ${fullName}-${companyName}-${emailId}-${contactNumber}-${country}  `);
   };
@@ -84,8 +85,9 @@ const ContactUs = () => {
                 outline: "none",
                 boxShadow: "none",
               }}
-              // value={title}
-              // onChange={(e) => setTitle(e.target.value)}
+              name="title"
+              value={inputs.title || ""}
+              onChange={handleChange}
             >
               {titleOptions.map((title) => (
                 <option key={title} value={title}>
@@ -126,16 +128,22 @@ const ContactUs = () => {
           <div className="col-md-6">
             <input
               type="email"
+              name="email"
               className="form-control w-full"
+              value={inputs.email || ""}
+              onChange={handleChange}
               placeholder="Email ID*"
               required
               style={{ outline: "none", boxShadow: "none", borderColor: "#ced4da" }}
-              // onChange={(e) => setEmailId(e.target.value)}
+             
             />
           </div>
           <div className="col-md-6">
             <input
               type="tel"
+              name="contactnumber"
+              value={inputs.contactnumber || ""}
+              onChange={handleChange}
               className="form-control w-full"
               placeholder="Contact Number*"
               required
@@ -148,9 +156,11 @@ const ContactUs = () => {
           <div className="col-md-6">
             <select
               className="form-select border border-gray-600 rounded bg-transparent text-dark w-full"
-              style={{ outline: "none", boxShadow: "none", borderColor: "#ced4da" }}
-              // onChange={(e) => setCountry(e.target.value)}
-            >
+              name="country"
+              value={inputs.country || ""}
+              onChange={handleChange}
+              style={{ outline: "none", boxShadow: "none", borderColor: "#ced4da" }}>
+
               <option value="" disabled selected>
                 Country
               </option>
@@ -165,6 +175,9 @@ const ContactUs = () => {
           <div className="col-md-6">
             <input
               type="text"
+              name="zipcode"
+              value={inputs.zipcode || ""}
+              onChange={handleChange}
               className="form-control w-full"
               placeholder="Zip Code"
               style={{ outline: "none", boxShadow: "none", borderColor: "#ced4da" }}
