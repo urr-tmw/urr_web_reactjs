@@ -42,7 +42,7 @@ const Events = () => {
                     className="w-full sm:w-[48%] rounded-[20px] shadow-md relative bg-[#121826] p-4"
                   >
                     <div className="absolute inset-0 bg-black bg-opacity-50 rounded-[10px]"></div>
-                    <div className="relative text-white">
+                    <div className="relative text-white text-left">
                       <span className="font-poppins font-semibold text-[14px] sm:text-[16px] block">
                         MRS Fall Meeting & Exhibit
                       </span>

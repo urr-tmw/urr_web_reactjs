@@ -1,24 +1,29 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import { Pagination } from "swiper/modules";
 
-// Importing images
-import HomeOurVision from "../assets/HomeOurVision.png";
-import HomeOurStory from "../assets/HomeOurStory.png";
-import HomeOurImpact from "../assets/HomeOurImpact.png";
-import HomeOurMission from "../assets/HomeOurMission.png";
+import {getAboutUsOverview } from "../utils/apiService";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const AboutUs = () => {
-  const cards = [
-    { title: "Our Vision", img: HomeOurVision },
-    { title: "Our Story", img: HomeOurStory },
-    { title: "Our Impact", img: HomeOurImpact },
-    { title: "Our Mission", img: HomeOurMission },
-  ];
+  const [abusoverview, setAbUsOverview] = useState([]);
 
+  useEffect(() => {
+          const fetchAboutUsOverview = async () => {
+              try {
+                  const abusoverview_data = await getAboutUsOverview();
+                  console.log("Fetched About Us Overview:", abusoverview_data);
+                  setAbUsOverview(abusoverview_data);
+              } catch (error) {
+                  console.error("Error fetching About Us Overview:", error);
+              }
+          };
+  
+          fetchAboutUsOverview();
+      }, []);
   return (
     <div
       className="container d-flex flex-column align-items-center justify-content-center"
@@ -38,21 +43,27 @@ const AboutUs = () => {
       >
         {/* Desktop View */}
         <div className="d-none d-md-flex justify-content-between">
-          {cards.map((card, index) => (
+          {abusoverview.map((card, index) => (
             <div
               key={index}
               className="card text-white position-relative group overflow-hidden"
               style={{
                 width: "334.17px",
                 height: "418.77px",
-                backgroundImage: `url(${card.img})`,
+                backgroundImage: `url(${card.image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 borderRadius: "31.73px",
               }}
             >
-              {/* Hover Overlay */}
-              <div className="position-absolute top-0 start-0 w-100 h-100 bg-[rgba(45,76,249,0.9)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Hover Overlay with Gradient */}
+              <div
+                className="position-absolute top-0 start-0 w-100 h-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(45, 76, 249, 0.9) 0%, #040025 100%)",
+                }}
+              ></div>
 
               {/* Title */}
               <div
@@ -84,8 +95,7 @@ const AboutUs = () => {
                 }}
               >
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {card.description}
                 </p>
               </div>
 
@@ -113,9 +123,9 @@ const AboutUs = () => {
             slidesPerView={1}
             pagination={{ clickable: true }}
             modules={[Pagination]}
-            style={{ height: "auto", paddingBottom: "30px" }} // Fixed height issue
+            style={{ height: "auto", paddingBottom: "30px" }}
           >
-            {cards.map((card, index) => (
+            {abusoverview.map((card, index) => (
               <SwiperSlide key={index}>
                 <div
                   className="card text-white position-relative group overflow-hidden mx-auto"
@@ -123,14 +133,20 @@ const AboutUs = () => {
                     width: "90%",
                     maxWidth: "334.17px",
                     height: "418.77px",
-                    backgroundImage: `url(${card.img})`,
+                    backgroundImage: `url(${card.image})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     borderRadius: "31.73px",
                   }}
                 >
-                  {/* Hover Overlay */}
-                  <div className="position-absolute top-0 start-0 w-100 h-100 bg-[rgba(45,76,249,0.9)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  {/* Hover Overlay with Gradient */}
+                  <div
+                    className="position-absolute top-0 start-0 w-100 h-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, rgba(45, 76, 249, 0.9) 0%, #040025 100%)",
+                    }}
+                  ></div>
 
                   {/* Title */}
                   <div
@@ -162,9 +178,7 @@ const AboutUs = () => {
                     }}
                   >
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut labore et dolore
-                      magna aliqua.
+                     {card.description}
                     </p>
                   </div>
 

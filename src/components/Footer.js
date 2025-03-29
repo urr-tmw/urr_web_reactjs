@@ -1,67 +1,159 @@
-import React from 'react';
-import imageSrc from '../assets/footer-logo.png';
+import logo from "../assets/footer.png";
+import linkedin from "../assets/linkedin.png";
+import Call from "../assets/Call.png";
+import whatsapp from "../assets/whatsapp.png";
+import youtube from "../assets/Youtube.png";
 
 const Footer = () => {
   return (
-    <footer className="text-white py-0  w-full relative bg-[#080D19] mt-[1300px] overflow-hidden">
-      {/* Top Container with #F7F7F7 color */}
-      <div className="bg-[#F7F7F7] h-[50px] rounded-b-[100px] border-0 w-full absolute top-0 left-0"></div>
+    <footer
+      className="w-100 position-relative text-white"
+      style={{ 
+        minHeight: "631px", 
+        paddingTop: "210px", 
+        backgroundColor: "#080D19", 
+        marginTop: "1300px"
+      }}
+    >
+      {/* White Top Container */}
+      <div
+        className="w-100 position-absolute top-0 bg-white"
+        style={{ height: "103px", borderBottomLeftRadius: "100px", borderBottomRightRadius: "100px" }}
+      ></div>
 
-      Footer Content
-      <div className=" mt-[0px] container mx-auto px-2 pt-[100px] pb-0 flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0">
-        {/* Section 1: Logo */}
-        <div className="w-[320px] h-[186px] flex flex-col items-center md:items-start">
-          <div className="text-center md:text-left">
-            <img src={imageSrc} alt="Footer Logo" className="w-[190px] h-[63.34px]" />
-            <h1 className="mt-3 text-[25.52px] font-montserrat font-semibold">
-              Urr Manufacturing LLP
-            </h1>
+      {/* Footer Content Wrapper */}
+      <div className="container position-relative pt-5">
+        <div className="row justify-content-between text-center text-md-start">
+          
+          {/* === 1st Column: Logo & Social Media (Centered in Mobile) === */}
+          <div className="col-12 col-md-3 mb-4 d-flex flex-column align-items-center text-center">
+            <img 
+              src={logo} 
+              alt="URR Manufacturing LLP" 
+              style={{ width: "190px", height: "63.34px" }} 
+            />
+            <h1
+  className="mt-3"
+  style={{
+    fontFamily: "Montserrat, sans-serif",
+    fontWeight: 600,
+    fontSize: "25.52px",
+    lineHeight: "100%",
+    letterSpacing: "-1%",
+  }}
+>
+  URR MANUFACTURING LLP
+</h1>
+            <div className="d-flex justify-content-center mt-3">
+  <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="me-3">
+    <img src={linkedin} alt="LinkedIn" width="45" height="45" />
+  </a>
+  <a href="tel:+16466993270" className="me-3">
+    <img src={Call} alt="Call" width="45" height="45" />
+  </a>
+  <a href="https://wa.me/16466993270" target="_blank" rel="noopener noreferrer" className="me-3">
+    <img src={whatsapp} alt="WhatsApp" width="45" height="45" />
+  </a>
+  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+    <img src={youtube} alt="YouTube" width="45" height="45" />
+  </a>
+</div>
+
           </div>
+
+          {/* === 2nd Column: Explore Links === */}
+<div className="col-6 col-md-2 mb-4">
+  <h4 
+    className="mb-3" 
+    style={{
+      fontFamily: "Inter, sans-serif",
+      fontWeight: 400,
+      fontSize: "21.48px",
+      lineHeight: "100%",
+      letterSpacing: "0%",
+    }}
+  >
+    Explore
+  </h4>
+  <ul className="list-unstyled">
+    <li className="mb-2" style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "21.48px", lineHeight: "100%" }}>Home</li>
+    <li className="mb-2" style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "21.48px", lineHeight: "100%" }}>About Us</li>
+    <li className="mb-2" style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "21.48px", lineHeight: "100%" }}>Product</li>
+    <li style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "21.48px", lineHeight: "100%" }}>Contact Us</li>
+  </ul>
+</div>
+
+          {/* === 3rd Column: Blog === */}
+<div className="col-6 col-md-2 mb-4">
+  <h4 
+    className="mb-3" 
+    style={{
+      fontFamily: "Inter, sans-serif",
+      fontWeight: 400,
+      fontSize: "21.48px",
+      lineHeight: "100%",
+      letterSpacing: "0%",
+    }}
+  >
+    Blog
+  </h4>
+  <ul className="list-unstyled">
+    <li className="mb-2" style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "21.48px", lineHeight: "100%" }}>Blog 1</li>
+    <li className="mb-2" style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "21.48px", lineHeight: "100%" }}>Blog 2</li>
+    <li className="mb-2" style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "21.48px", lineHeight: "100%" }}>Blog 3</li>
+    <li style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "21.48px", lineHeight: "100%" }}>Blog 4</li>
+  </ul>
+</div>
+
+
+          {/* === 4th Column: Contact Info === */}
+<div className="col-12 col-md-4 mb-4">
+  <h4 
+    className="mb-3" 
+    style={{
+      fontFamily: "Inter, sans-serif",
+      fontWeight: 400,
+      fontSize: "21.48px",
+      lineHeight: "100%",
+      letterSpacing: "0%",
+    }}
+  >
+    Contact Info
+  </h4>
+  <ul className="list-unstyled">
+    <li className="mb-2" style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "21.48px", lineHeight: "100%" }}>
+      Call us: +1 (646) 699 3270
+    </li>
+    <li style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "21.48px", lineHeight: "100%" }}>
+      EMAIL: umangp@urrmanufacturing.com
+    </li>
+  </ul>
+</div>
+
         </div>
 
-        {/* Section 2: Explore Links and Blog */}
-        <div className="w-[402px] h-[234px] flex flex-row gap-[60px] items-center justify-center md:items-start">
-          {/* Explore Links */}
-          <div className="text-left space-y-4 w-1/2 ">
-          <h3 className="text-lg font-semibold mb-2 font-inter">Explore Links</h3>
-          <ul className="space-y-4 px-0 font-inter font-normal text-[21.48px] leading-[100%] tracking-[0%]">
-            <li><a href="/" className="hover:underline">Home</a></li>
-            <li><a href="/about" className="hover:underline">About us</a></li>
-            <li><a href="/products" className="hover:underline">Products</a></li>
-            <li><a href="/map" className="hover:underline">Contact us</a></li>
-          </ul>
-        </div>
+        {/* Copyright Section */}
+        <div 
+  className="text-center pt-3 mt-4" 
+  style={{ 
+    borderTop: "1px solid rgba(255,255,255,0.1)"
+  }}
+>
+  <p 
+    className="mb-0" 
+    style={{
+      fontFamily: "Inter, sans-serif",
+      fontWeight: 400,
+      fontSize: "16.13px",
+      lineHeight: "100%",
+      letterSpacing: "2%",
+      textAlign: "center",
+    }}
+  >
+    © 2024 URR Manufacturing | Designed by URR
+  </p>
+</div>
 
-          {/* Blog */}
-          <div className="text-left w-1/2 space-y-4">
-          <h3 className="text-lg  font-semibold mb-2 font-inter">Blog</h3>
-          <ul className="space-y-4 px-0 font-inter font-normal text-[21.48px] leading-[100%] tracking-[0%]">
-            <li><a href="/blog1" className="">Blog1</a></li>
-            <li><a href="/blog2" className="">Blog2</a></li>
-            <li><a href="/blog3" className="">Blog3</a></li>
-            <li><a href="/blog4" className="">Blog4</a></li>
-          </ul>
-        </div>
-        </div>
-
-        {/* Section 3: Contact Info - Now properly left-aligned on larger screens */}
-      <div className="w-[435px] md:w-[435px] min-h-[150px] text-left ">
-        <div className="max-w-[435px] mx-auto md:mx-0 space-y-4">
-          <h3 className="text-lg  font-semibold mb-2 font-inter">Contact Us</h3>
-          <ul className="text-white space-y-4 pl-[0px] font-inter font-normal text-[21.48px] leading-[100%] tracking-[0%]">
-            <li className="mb-2">Call us: +1 (646) 699 3270</li>
-            <li>Email: umangp@urrmanufacturing.com</li>
-          </ul>
-        </div>
-      </div>
-      </div>
-
-      {/* White Line and Copyright Text */}
-      <div className="w-full px-4 mt-6">
-      <div className="border-t w-full" style={{ borderColor: "rgba(255, 255, 255, 0.22)" }}></div>
-        <p className="text-center text-sm mt-4">
-          © 2024 URR Manufacturing Designed by URR
-        </p>
       </div>
     </footer>
   );

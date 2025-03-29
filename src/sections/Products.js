@@ -21,53 +21,53 @@ const Products = () => {
         Products
       </h2>
 
-      {/* Desktop Layout */}
-<div
-  className="d-none d-lg-block mx-auto rounded"
-  style={{ maxWidth: "1373px", height: "722px", borderRadius: "34.47px" }}
->
-  <div className="d-flex justify-content-between mb-4 rounded" style={{ gap: "44.5px", borderRadius: "34.47px" }}>
-    {products.slice(0, 3).map((item, index) => (
-      <div
-        key={item.id}
-        className="position-relative overflow-hidden rounded"
-        style={{
-          width: [366, 552, 366][index] + "px",
-          height: "464px",
-          borderRadius: "34.47px",
-        }}
+     {/* Desktop Layout */}
+     <div
+        className="d-none d-lg-block mx-auto rounded"
+        style={{ maxWidth: "1373px", height: "722px", borderRadius: "34.47px" }}
       >
-        <img
-          src={item.img}
-          alt={item.title}
-          className="w-100 h-100 object-cover"
-          style={{ transform: "scale(1.1)", transition: "0.3s ease-in-out" }}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1)")}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-        />
-      </div>
-    ))}
-  </div>
+        <div className="d-flex justify-content-between mb-4 rounded" style={{ gap: "44.5px", borderRadius: "34.47px" }}>
+          {products.slice(0, 3).map((item, index) => (
+            <div
+              key={item.id}
+              className="position-relative overflow-hidden rounded"
+              style={{
+                width: [366, 552, 366][index] + "px",
+                height: "464px",
+                borderRadius: "34.47px",
+              }}
+            >
+              <img
+                src={item.img}
+                alt={item.title}
+                className="w-100 h-100 object-cover rounded"
+                style={{ transform: "scale(1.1)", transition: "0.3s ease-in-out", borderRadius: "34.47px" }}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+              />
+            </div>
+          ))}
+        </div>
 
-  <div className="d-flex justify-content-between rounded" style={{ gap: "48px", borderRadius: "34.47px" }}>
-    {products.slice(3, 5).map((item, index) => (
-      <div
-        key={item.id}
-        className="position-relative overflow-hidden rounded"
-        style={{ width: [568, 760][index] + "px", height: "217px", borderRadius: "34.47px" }}
-      >
-        <img
-          src={item.img}
-          alt={item.title}
-          className="w-100 h-100 object-cover"
-          style={{ transform: "scale(1.1)", transition: "0.3s ease-in-out" }}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1)")}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-        />
+        <div className="d-flex justify-content-between rounded" style={{ gap: "48px", borderRadius: "34.47px" }}>
+          {products.slice(3, 5).map((item, index) => (
+            <div
+              key={item.id}
+              className="position-relative overflow-hidden rounded"
+              style={{ width: [568, 760][index] + "px", height: "217px", borderRadius: "34.47px" }}
+            >
+              <img
+                src={item.img}
+                alt={item.title}
+                className="w-100 h-100 object-cover rounded"
+                style={{ transform: "scale(1.1)", transition: "0.3s ease-in-out", borderRadius: "34.47px" }}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
 
       {/* Tablet Layout */}
       <div

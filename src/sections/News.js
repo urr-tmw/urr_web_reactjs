@@ -62,7 +62,7 @@ const News = () => {
 const NewsCard = ({ card }) => {
   return (
     <div
-      className="card shadow-lg rounded-lg overflow-hidden position-relative transition duration-300"
+      className="card rounded-lg overflow-hidden position-relative transition duration-300"
       style={{
         width: "100%",
         maxWidth: "401px",

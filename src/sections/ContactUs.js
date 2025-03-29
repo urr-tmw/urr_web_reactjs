@@ -63,9 +63,9 @@ const ContactUs = () => {
     <div className="container">
   <div className="row justify-content-center">
     {/* Left Container */}
-    <div className="col-lg-6 d-flex align-items-stretch">
+    <div className="col-lg-6 d-flex align-items-stretch mb-[10px]">
       <div
-        className="w-100 bg-white shadow-lg p-4 rounded-3 overflow-hidden"
+        className="w-100 bg-white p-4 rounded-3 overflow-hidden"
         style={{ minHeight: "695px", maxWidth: "695px" }}
       >
         <h2 className="text-[28px] sm:text-[32px] md:text-[35px] font-normal text-[#2A3241] text-left mt-[57px] mb-4 font-['DM_Serif_Display'] leading-[100%] align-middle break-words">
@@ -208,9 +208,9 @@ const ContactUs = () => {
     </div>
 
     {/* Right Container */}
-    <div className="col-lg-6 d-flex align-items-stretch">
+    <div className="col-lg-6 d-flex align-items-stretch mb-[10px]">
       <div
-        className="w-100 bg-white shadow-lg p-4 rounded-3 d-flex flex-column overflow-hidden"
+        className="w-100 bg-white p-4 rounded-3 d-flex flex-column overflow-hidden"
         style={{ minHeight: "695px", maxWidth: "703px" }}
       >
         <h2 className="text-[32px] sm:text-[40px] md:text-[48px] font-normal text-[#4D4D4DAB] text-center leading-[100%] tracking-[0%] font-['DM_Serif_Display'] break-words">
